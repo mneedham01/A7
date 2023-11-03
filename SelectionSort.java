@@ -1,24 +1,49 @@
+import java.util.*;
+
 public class SelectionSort {
-  
+
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
-    
+
     // register the starting configuration with the recorder
     record.add(unsorted);
 
     // Here is the result list you will be creating
     CardPile sorted = new CardPile();
-  
-    // ***********************************************************
-    // Here is where you'll do the "work" of SelectionSort:
-    //   - Use sorted to store the "sorted portion"
-    //   - Don't forget to register the new state with the
-    //     recorder after each card is transferred:
-    //        record.next();        // tell it this is a new step
-    //        record.add(sorted);   // the sorted pile
-    //        record.add(unsorted); // the unsorted pile
-    // ***********************************************************
+
+    // until unsorted is empty
+    while (! unsorted.isEmpty()) {
+      // scan unsorted for smallest remaining element
+      ListIterator<Card> position = unsorted.listIterator();
+      Card smallest = position.next();
+      while (position.hasNext()) {
+        Card toCompare = position.next();
+        if (toCompare.compareTo(smallest) < 0) {
+          // then next card is smallest
+          smallest = toCompare;
+        }
+      }
+      // add to sorted list
+      sorted.addLast(smallest);
+      // remove smallest
+      unsorted.remove(smallest);
+      // record
+      record.next();
+      record.add(sorted);
+      record.add(unsorted);
+    }
 
     // return the sorted result here
     return sorted;
+  }
+
+  public static void main(String[] args) {
+    // initialize deck of cards
+    CardPile unsorted = new CardPile(Card.newDeck(true), 2, 2);
+    // shuffle it
+    Collections.shuffle(unsorted);
+    // create a new record
+    SortRecorder record = new SortRecorder();
+    // sort it
+    CardPile sorted = sort(unsorted, record);
   }
 }
