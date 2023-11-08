@@ -37,13 +37,42 @@ public class SelectionSort {
   }
 
   public static void main(String[] args) {
-    // initialize deck of cards
-    CardPile unsorted = new CardPile(Card.newDeck(true), 2, 2);
-    // shuffle it
-    Collections.shuffle(unsorted);
-    // create a new record
-    SortRecorder record = new SortRecorder();
-    // sort it
-    CardPile sorted = sort(unsorted, record);
+    // // set up a class to record and display the sorting results
+    // SortRecorder recorder = new SortRecorder();
+    // // set up the deck of cards
+    // Card.loadImages(recorder);
+    // // initialize deck of cards
+    // CardPile unsorted = new CardPile(Card.newDeck(true), 2, 2);
+    // System.out.println("unsorted: "+ unsorted);
+    // // shuffle it
+    // Collections.shuffle(unsorted);
+    // // create a new record
+    // SortRecorder record = new SortRecorder();
+    // // sort it
+    // CardPile sorted = sort(unsorted, record);
+    // System.out.println("sorted: "+ sorted);
+    // recorder.display("Card Sort Demo: FakeSort");
+
+    // set up a class to record and display the sorting results
+    SortRecorder recorder = new SortRecorder();
+
+    // set up the deck of cards
+    Card.loadImages(recorder);
+    CardPile cards = new CardPile(Card.newDeck(true), 2, 2);
+
+    // mix up the cards
+    Collections.shuffle(cards);
+
+    // if you want to sort in array form, use:
+    Card[] card_arr = cards.toArray(new Card[0]);
+
+    // in your program, this would be a call to a real sorting algorithm
+    cards = sort(cards, recorder);
+
+    // We can print out the (un)sorted result:
+    System.out.println(cards);
+
+    // make window appear showing the record
+    recorder.display("Card Sort Demo: SelectionSort");
   }
 }
