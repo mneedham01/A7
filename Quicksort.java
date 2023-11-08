@@ -8,6 +8,9 @@ public class Quicksort {
     // Here is where you'll check the stop condition and return
     // if it is satisfied.
     // ***********************************************************
+    if (unsorted.size() <= 1) {
+      return unsorted;
+    }
 
     // Here are the two partitions you will be creating
     CardPile smaller = new CardPile();
@@ -18,8 +21,14 @@ public class Quicksort {
     //   - Choose a pivot
     //   - Partition the unsorted list into two piles
     // ***********************************************************
-    Card pivot = null;  // edit this!
-
+    Card pivot = unsorted.removeFirst();  // edit this!
+    for (Card card : unsorted) {
+      if (card.compareTo(pivot) < 0) {
+        smaller.add(card);
+      } else {
+        bigger.add(card);
+      }
+    }
     // register the partitions with the recorder
     record.add(smaller);
     record.add(pivot);
@@ -34,6 +43,12 @@ public class Quicksort {
     //   - Make recursive calls on the partitions
     //   - Assemble the sorted results into a single pile
     // ***********************************************************
+    CardPile sortedSmaller = sort(smaller, record);
+    CardPile sortedBigger = sort(bigger, record);
+    result.addAll(sortedSmaller);
+    result.addLast(pivot);
+    result.addAll(sortedBigger);
+
 
     // record the sorted result
     record.add(result);
