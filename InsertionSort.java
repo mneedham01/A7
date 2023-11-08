@@ -16,7 +16,7 @@ public class InsertionSort {
     sorted.add(unsorted.removeFirst());
     while (! unsorted.isEmpty()) {
       Card toSort = unsorted.removeFirst();
-      sorted.insertAfter(toSort, findAfter(toSort, sorted));
+      sorted.add(findPosition(toSort, sorted), toSort);
       // record
       record.next();
       record.add(sorted);
@@ -26,12 +26,12 @@ public class InsertionSort {
   }
 
   /**  */
-  public static Card findAfter (Card toSort, CardPile sorted) {
+  public static int findPosition (Card toSort, CardPile sorted) {
     int position = 0;
     while (position < sorted.size() && sorted.get(position).compareTo(toSort) <= 0) {
       position ++;
     }
-    return sorted.get(position);
+    return position;
   }
 
   /**  */
