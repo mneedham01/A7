@@ -37,21 +37,6 @@ public class SelectionSort {
   }
 
   public static void main(String[] args) {
-    // // set up a class to record and display the sorting results
-    // SortRecorder recorder = new SortRecorder();
-    // // set up the deck of cards
-    // Card.loadImages(recorder);
-    // // initialize deck of cards
-    // CardPile unsorted = new CardPile(Card.newDeck(true), 2, 2);
-    // System.out.println("unsorted: "+ unsorted);
-    // // shuffle it
-    // Collections.shuffle(unsorted);
-    // // create a new record
-    // SortRecorder record = new SortRecorder();
-    // // sort it
-    // CardPile sorted = sort(unsorted, record);
-    // System.out.println("sorted: "+ sorted);
-    // recorder.display("Card Sort Demo: FakeSort");
 
     // set up a class to record and display the sorting results
     SortRecorder recorder = new SortRecorder();
