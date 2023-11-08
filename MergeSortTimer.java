@@ -40,14 +40,10 @@ public class MergeSortTimer {
     while (queue.size() > 1) {
       // remove the first two lists, merge
       CardPile list1 = queue.removeFirst();
-      System.out.println("list 1 = " + list1);
       CardPile list2 = queue.removeFirst();
-      System.out.println("list 2 = " + list2);
       CardPile merged = merge(list1, list2);
-      System.out.println("merged = " + merged);
       // put result at the end of the queue
       queue.add(merged);
-      System.out.println(queue.getLast());
       }
     // return the sorted result here
     return queue.remove();
