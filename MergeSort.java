@@ -44,14 +44,10 @@ public class MergeSort {
     while (queue.size() > 1) {
       // remove the first two lists, merge
       CardPile list1 = queue.removeFirst();
-      System.out.println("list 1 = " + list1);
       CardPile list2 = queue.removeFirst();
-      System.out.println("list 2 = " + list2);
       CardPile merged = merge(list1, list2);
-      System.out.println("merged = " + merged);
       // put result at the end of the queue
       queue.add(merged);
-      System.out.println(queue.getLast());
       record.next();        // tell it this is a new step
       for (CardPile pile: queue) { // add all piles
         record.add(pile);
@@ -75,9 +71,6 @@ public class MergeSort {
 
     // in your program, this would be a call to a real sorting algorithm
     cards = sort(cards, recorder);
-
-    // We can print out the (un)sorted result:
-    System.out.println(cards);
 
     // make window appear showing the record
     recorder.display("Card Sort Demo: MergeSort");
