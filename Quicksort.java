@@ -1,12 +1,14 @@
+import java.util.Collections;
+
 public class Quicksort {
-  
+
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
 
     // ***********************************************************
     // Here is where you'll check the stop condition and return
     // if it is satisfied.
     // ***********************************************************
-    
+
     // Here are the two partitions you will be creating
     CardPile smaller = new CardPile();
     CardPile bigger = new CardPile();
@@ -17,7 +19,7 @@ public class Quicksort {
     //   - Partition the unsorted list into two piles
     // ***********************************************************
     Card pivot = null;  // edit this!
-    
+
     // register the partitions with the recorder
     record.add(smaller);
     record.add(pivot);
@@ -26,7 +28,7 @@ public class Quicksort {
 
     // This will hold the assembled result
     CardPile result = new CardPile();
-    
+
     // ***********************************************************
     // Here is where you'll do the remaining work of Quicksort:
     //   - Make recursive calls on the partitions
@@ -36,8 +38,22 @@ public class Quicksort {
     // record the sorted result
     record.add(result);
     record.next();
-    
+
     // return the sorted result here
     return result;
+  }
+
+  /**  */
+  public static void main(String[] args) {
+    // initialize deck of cards
+    CardPile unsorted = new CardPile(Card.newDeck(true), 2, 2);
+    System.out.println("unsorted: "+ unsorted);
+    // shuffle it
+    Collections.shuffle(unsorted);
+    // create a new record
+    SortRecorder record = new SortRecorder();
+    // sort it
+    CardPile sorted = sort(unsorted, record);
+    System.out.println("sorted: "+ sorted);
   }
 }
