@@ -40,7 +40,7 @@ public class InsertionSort {
     SortRecorder recorder = new SortRecorder();
 
     // set up the deck of cards
-    // Card.loadImages(recorder);
+    Card.loadImages(recorder);
     CardPile cards = new CardPile(Card.newDeck(true), 2, 2);
 
     // mix up the cards
@@ -54,6 +54,6 @@ public class InsertionSort {
     System.out.println("sorted = " + cards);
 
     // make window appear showing the record
-    //recorder.display("Card Sort Demo: InsertionSort");
+    recorder.display("Card Sort Demo: InsertionSort");
   }
 }
