@@ -1,6 +1,10 @@
+/** Different version of InsertionSort to be run from console */
 public class InsertionSortTimer {
 
-    /**  */
+  /**
+   * @params: CardPile unsorted
+   * @return: sorted CardPile
+   */
   public static CardPile sort(CardPile unsorted) {
 
     // Here is the result list you will be creating
@@ -15,7 +19,10 @@ public class InsertionSortTimer {
   return sorted;
   }
 
-  /**  */
+  /**
+   * @params: Card toSort, CardPile sorted
+   * @returns: int position to insert card at
+   */
   public static int findPosition (Card toSort, CardPile sorted) {
     int position = 0;
     while (position < sorted.size() && sorted.get(position).compareTo(toSort) <= 0) {
