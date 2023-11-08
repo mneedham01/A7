@@ -1,8 +1,12 @@
 import java.util.ArrayDeque;
 
+/** MergeSort class has modified method to sort cards and main method to run */
 public class MergeSortTimer {
 
-    /** */
+  /**
+   * @param CardPile list1, CardPile list2
+   * @returns merged and ordered CardPile
+   */
   public static CardPile merge(CardPile list1, CardPile list2) {
     CardPile merged = new CardPile();
     // while both lists are not empty
@@ -25,7 +29,11 @@ public class MergeSortTimer {
     return merged;
   }
 
-  /**  */
+
+  /**
+   * @param: CardPile unsorted
+   * @returns: Sorted Cardpile
+   */
   public static CardPile sort(CardPile unsorted) {
 
     ArrayDeque<CardPile> queue = new ArrayDeque<CardPile>();
