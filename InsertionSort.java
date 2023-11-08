@@ -1,9 +1,12 @@
 import java.util.Collections;
 
-/**  */
+/** Class has insertion sort method and main to run it */
 public class InsertionSort {
 
-  /**  */
+  /**
+   * @params CardPile unsorted, Sortrecorder record
+   * @returns sorted CardPile
+   */
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
 
     // register the starting configuration with the recorder
@@ -25,7 +28,10 @@ public class InsertionSort {
   return sorted;
   }
 
-  /**  */
+  /**
+   * @params: Card toSort, CardPile sorted
+   * @returns: int position to insert card at
+   */
   public static int findPosition (Card toSort, CardPile sorted) {
     int position = 0;
     while (position < sorted.size() && sorted.get(position).compareTo(toSort) <= 0) {
@@ -34,7 +40,7 @@ public class InsertionSort {
     return position;
   }
 
-  /**  */
+  /** Runs sort */
   public static void main(String[] args) {
     // set up a class to record and display the sorting results
     SortRecorder recorder = new SortRecorder();
