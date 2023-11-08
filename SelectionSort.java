@@ -1,7 +1,10 @@
 import java.util.*;
-
+/** SelectionSort has method to sort cards by selection and main method to run */
 public class SelectionSort {
-
+  /**
+   * @params CardPile unsorted, SortRecorder record
+   * @return sorted CardPile
+   */
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
 
     // register the starting configuration with the recorder
@@ -36,6 +39,7 @@ public class SelectionSort {
     return sorted;
   }
 
+  /** Runs sort */
   public static void main(String[] args) {
 
     // set up a class to record and display the sorting results

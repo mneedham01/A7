@@ -1,7 +1,12 @@
 import java.util.ListIterator;
 
+/** SelectionSort has modified method to sort cards by selection and main method to run */
 public class SelectionSortTimer {
 
+    /**
+   * @params CardPile unsorted
+   * @return sorted CardPile
+   */
     public static CardPile sort(CardPile unsorted) {
 
         // Here is the result list you will be creating

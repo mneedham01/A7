@@ -1,7 +1,12 @@
 import java.util.Collections;
 
+/** Quicksort has method to quicksort cards and main method to run  */
 public class Quicksort {
 
+  /**
+   * @params CardPile unsorted, SortRecorder record
+   * @return sorted CardPile
+   */
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
 
     // ***********************************************************
@@ -58,7 +63,7 @@ public class Quicksort {
     return result;
   }
 
-  /**  */
+  /** Runs sort method */
   public static void main(String[] args) {
     // set up a class to record and display the sorting results
     SortRecorder recorder = new SortRecorder();
