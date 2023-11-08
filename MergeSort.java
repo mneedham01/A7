@@ -1,10 +1,13 @@
 import java.util.ArrayDeque;
 import java.util.Collections;
 
-/** */
+/** MergeSort class has method to sort cards and main method to run */
 public class MergeSort {
 
-  /** */
+  /**
+   * @param CardPile list1, CardPile list2
+   * @returns merged and ordered CardPile
+   */
   public static CardPile merge(CardPile list1, CardPile list2) {
     CardPile merged = new CardPile();
     // while both lists are not empty
@@ -27,7 +30,10 @@ public class MergeSort {
     return merged;
   }
 
-  /**  */
+  /**
+   * @param: CardPile unsorted, SortRecorder record
+   * @returns: Sorted Cardpile
+   */
   public static CardPile sort(CardPile unsorted, SortRecorder record) {
     // register the starting configuration with the recorder
     record.add(unsorted);
@@ -57,7 +63,7 @@ public class MergeSort {
     return queue.remove();
   }
 
-  /**  */
+  /** Runs sort */
    public static void main(String[] args) {
     // set up a class to record and display the sorting results
     SortRecorder recorder = new SortRecorder();
